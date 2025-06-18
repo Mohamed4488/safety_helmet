@@ -6,8 +6,10 @@ stages:
     
     deps:
       - safety-helmet-1/data.yaml
-
-
+      - notebooks\prep.ipynb
+    
+    outs:
+      - ex_notebooks\prep.ipynb
 
   
   train:
@@ -16,8 +18,11 @@ stages:
     
     deps:
       - safety-helmet-1/data.yaml
+      - notebooks\train.ipynb
       - params.yaml
       - yolo11n.pt
 
     outs:
       - runs
+      - mlflow
+      - ex_notebooks\train.ipynb
